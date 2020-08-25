@@ -52,11 +52,13 @@ Project Planning Document for Pokedex Sprint Challenge
 	Types / (Types: Type1, Type 2)(Outlet)
 - Image View (Outlet)
 	-Contains sprite image
+- Save (Action)
 #### Protocols, Dependencies, and Inheritances
 - UIKit
 - Navigation Bar
  - Title: Pokemon Search (Set title in VDL, prefers large in storyboard)
  - Back Button: "Pokedex" (Set in storyboard)
+ - Save button: Connects to save action, appends the current pokemon to the controller's pokemon array.
 - UISearchBarDelegate
 - Pokemon Controller (From pokedextvc)
 
@@ -73,3 +75,26 @@ Project Planning Document for Pokedex Sprint Challenge
 	Types / (Types: Type1, Type 2)(Outlet)
 - Image View (Outlet)
 	-Contains sprite image
+	
+	
+## Models
+### Pokemon
+#### Properties
+- Coding Keys (String, CodingKey)
+
+- Name: String
+- ID: Int
+- Abilities: [String]
+- Types: [String]
+
+- Init from decoder
+#### Conformances & Inheritances
+- Decodable
+
+## Controllers
+### Pokemon Controller
+### Properties
+- Read property, pokemon: [Pokemon]()
+- Result property, result: Pokemon?
+### Methods
+- Search/Fetch function, sets value of result
